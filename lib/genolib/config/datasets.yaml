@@ -1,0 +1,262 @@
+# Dataset Registry
+# Add new datasets here - the pipeline will pick them up automatically
+
+gastric:
+  TCGA-STAD:
+    accession: TCGA-STAD
+    platform: rnaseq_illumina
+    omics_type: bulk_rnaseq
+    source: gdc
+    url: https://portal.gdc.cancer.gov/projects/TCGA-STAD
+    n_tumor: 375
+    n_normal: 32
+    has_survival: true
+    has_staging: true
+    normalization: tpm  # counts available, normalize to TPM
+    notes: "Gold standard, treatment-naive"
+    priority: 1
+    
+  GSE15459:
+    accession: GSE15459
+    platform: affymetrix_hgu133plus2
+    omics_type: microarray
+    source: geo
+    url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE15459
+    n_tumor: 200
+    n_normal: 0
+    has_survival: true
+    has_staging: true
+    normalization: rma
+    pmid: 19563647
+    notes: "Singapore cohort, same platform as ACRG"
+    priority: 2
+    
+  GSE84437:
+    accession: GSE84437
+    platform: illumina_humanht12_v3
+    omics_type: microarray
+    source: geo
+    url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE84437
+    n_tumor: 434
+    n_normal: 0
+    has_survival: true
+    has_staging: true
+    normalization: quantile
+    notes: "Largest microarray cohort, different platform"
+    priority: 2
+    
+  GSE66229:
+    accession: GSE66229
+    platform: affymetrix_hgu133plus2
+    omics_type: microarray
+    source: geo
+    url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE66229
+    n_tumor: 300
+    n_normal: 100
+    has_survival: true
+    has_staging: true
+    normalization: rma
+    pmid: 26573801
+    notes: "ACRG (Asian Cancer Research Group) SuperSeries; 300 tumor + 100 adjacent normal. GSE62254 is its tumor-only SubSeries (duplicate, not analyzed separately)."
+    priority: 1
+    
+  GSE57303:
+    accession: GSE57303
+    platform: affymetrix_hgu133plus2
+    omics_type: microarray
+    source: geo
+    url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE57303
+    n_tumor: 70
+    n_normal: 0
+    has_survival: true
+    has_staging: true
+    normalization: rma
+    notes: "Smaller validation cohort"
+    priority: 3
+    
+  GSE51105:
+    accession: GSE51105
+    platform: affymetrix_hgu133plus2
+    omics_type: microarray
+    source: geo
+    url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE51105
+    n_tumor: 94
+    n_normal: 0
+    has_survival: false
+    has_staging: false
+    normalization: rma
+    notes: "Lauren classification available"
+    priority: 3
+
+  GSE118916:
+    accession: GSE118916
+    platform: affymetrix_hgu133plus2
+    omics_type: microarray
+    source: geo
+    url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE118916
+    n_tumor: 15
+    n_normal: 15
+    has_survival: false
+    has_staging: false
+    normalization: rma
+    notes: "Contains matched normal samples, filter before analysis"
+    priority: 3
+
+  GSE34942:
+    accession: GSE34942
+    platform: affymetrix_hgu133plus2
+    omics_type: microarray
+    source: geo
+    url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE34942
+    n_tumor: 56
+    n_normal: 0
+    has_survival: false
+    has_staging: false
+    normalization: rma
+    notes: "Gastric cancer cohort"
+    priority: 3
+
+  GSE35809:
+    accession: GSE35809
+    platform: affymetrix_hgu133plus2
+    omics_type: microarray
+    source: geo
+    url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE35809
+    n_tumor: 70
+    n_normal: 0
+    has_survival: false
+    has_staging: false
+    normalization: rma
+    notes: "Gastric cancer cohort"
+    priority: 3
+
+  GSE54129:
+    accession: GSE54129
+    platform: affymetrix_hgu133plus2
+    omics_type: microarray
+    source: geo
+    url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE54129
+    n_tumor: 111
+    n_normal: 21
+    has_survival: false
+    has_staging: false
+    normalization: rma
+    notes: "Contains normal samples, filter before analysis"
+    priority: 3
+
+  GSE26253:
+    accession: GSE26253
+    platform: illumina_humanref8_v3  # GPL8432
+    omics_type: microarray
+    source: geo
+    url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE26253
+    n_tumor: 432
+    n_normal: 0
+    has_survival: true   # RFS only, NOT OS
+    has_staging: true
+    normalization: quantile
+    notes: "Korean FFPE adjuvant chemoRT cohort. RFS not OS. No Lauren or molecular subtype. Missing CD274/PDCD1/TIGIT on this platform."
+    priority: 2
+
+# Template for adding new datasets:
+# 
+#   ACCESSION_ID:
+#     accession: ACCESSION_ID
+#     platform: [rnaseq_illumina | affymetrix_hgu133plus2 | illumina_humanht12_v3 | ...]
+#     omics_type: [bulk_rnaseq | microarray | scrna]
+#     source: [geo | gdc | ngdc | arrayexpress]
+#     url: URL
+#     n_tumor: N
+#     n_normal: N
+#     has_survival: [true | false]
+#     has_staging: [true | false]
+#     normalization: [tpm | rma | quantile]
+#     pmid: PUBMED_ID  # optional
+#     notes: "Any relevant notes"
+#     priority: [1 | 2 | 3]  # 1=core, 2=expansion, 3=validation
+
+colorectal:
+  # Add colorectal datasets here
+  TCGA-COAD:
+    accession: TCGA-COAD
+    platform: rnaseq_illumina
+    omics_type: bulk_rnaseq
+    source: gdc
+    url: https://portal.gdc.cancer.gov/projects/TCGA-COAD
+    n_tumor: 480
+    n_normal: 41
+    has_survival: true
+    has_staging: true
+    normalization: tpm
+    priority: 1
+
+  GSE14333:
+    accession: GSE14333
+    platform: affymetrix_hgu133plus2
+    omics_type: microarray
+    source: geo
+    url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE14333
+    n_tumor: 290
+    n_normal: 0
+    has_survival: true
+    has_staging: true
+    normalization: rma
+    notes: "Jorissen (Clin Cancer Res); Peter Mac + Moffitt; Dukes A-D, DFS. TGF-beta project cohort."
+    priority: 2
+
+  GSE38832:
+    accession: GSE38832
+    platform: affymetrix_hgu133plus2
+    omics_type: microarray
+    source: geo
+    url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE38832
+    n_tumor: 122
+    n_normal: 0
+    has_survival: true
+    has_staging: true
+    normalization: rma
+    notes: "Prognostic validation cohort. TGF-beta project cohort."
+    priority: 2
+
+  GSE39582:
+    accession: GSE39582
+    platform: affymetrix_hgu133plus2
+    omics_type: microarray
+    source: geo
+    url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE39582
+    n_tumor: 566
+    n_normal: 19
+    has_survival: true
+    has_staging: true
+    normalization: rma
+    notes: "Marisa CIT cohort. Full matrix needed for xCell (exploratory archive is signature-genes-only)."
+    priority: 1
+
+  GSE17538:
+    accession: GSE17538
+    platform: affymetrix_hgu133plus2
+    omics_type: microarray
+    source: geo
+    url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE17538
+    n_tumor: 238
+    n_normal: 0
+    has_survival: true
+    has_staging: true
+    normalization: rma
+    notes: "Moffitt/Vanderbilt; GSE17536/17537 are subseries - do not double-count. Full matrix needed for xCell."
+    priority: 1
+
+pancreatic:
+  # Add pancreatic datasets here
+  TCGA-PAAD:
+    accession: TCGA-PAAD
+    platform: rnaseq_illumina
+    omics_type: bulk_rnaseq
+    source: gdc
+    url: https://portal.gdc.cancer.gov/projects/TCGA-PAAD
+    n_tumor: 178
+    n_normal: 4
+    has_survival: true
+    has_staging: true
+    normalization: tpm
+    priority: 1

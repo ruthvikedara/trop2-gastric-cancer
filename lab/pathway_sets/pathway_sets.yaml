@@ -1,0 +1,228 @@
+version: '1.1'
+species: Homo sapiens
+provenance: standard pathway gene sets, generated from Table S2
+  by parse_suptables.py
+source_types:
+  manual: explicit curated gene list (literature signature)
+  kegg: 'KEGG pathway id; R: msigdbr(category=''C2'', subcategory=''CP:KEGG_LEGACY''); Python: fetch gene list by hsa id (KEGG
+    REST / gseapy / bioservices)'
+  hallmark: 'MSigDB Hallmark set; R: msigdbr(category=''H'')'
+sections:
+  IDO1 upstream/downstream mechanism pathways:
+  - name: IFN-γ response (6-gene)
+    source: manual
+    genes:
+    - CXCL9
+    - CXCL10
+    - IDO1
+    - IFNG
+    - HLA-DRA
+    - STAT1
+    citation: Ayers M, Lunceford J, Nebozhyn M, Murphy E, Loboda A, Kaufman DR, et al. IFN-γ-related mRNA profile predicts
+      clinical response to PD-1 blockade. J Clin Invest. 2017;127(8):2930-2940.
+    doi: 10.1172/JCI91190
+  - name: JAK-STAT signaling
+    source: kegg
+    kegg_id: hsa04630
+    citation: 'Kanehisa M, Goto S. KEGG: Kyoto Encyclopedia of Genes and Genomes. Nucleic Acids Res. 2000;28(1):27-30.'
+    doi: 10.1093/nar/28.1.27
+  - name: Tryptophan / kynurenine metabolism
+    source: kegg
+    kegg_id: hsa00380
+    citation: 'Munn DH, Mellor AL. IDO in the Tumor Microenvironment: Inflammation, Counter-Regulation, and Tolerance. Trends
+      Immunol. 2016;37(3):193-207.'
+    doi: 10.1016/j.it.2016.01.002
+  - name: AHR signaling
+    source: manual
+    genes:
+    - AHR
+    - ARNT
+    - CYP1A1
+    - CYP1B1
+    - NQO1
+    - TIPARP
+    citation: Opitz CA, Litzenburger UM, Sahm F, Ott M, Tritschler I, Trump S, et al. An endogenous tumour-promoting ligand
+      of the human aryl hydrocarbon receptor. Nature. 2011;478(7368):197-203.
+    doi: 10.1038/nature10491
+  CLDN18 / epithelial-junction mechanism pathways:
+  - name: Hippo-YAP/TEAD signaling
+    source: kegg
+    kegg_id: hsa04390
+    citation: Zanconato F, Cordenonsi M, Piccolo S. YAP/TAZ at the Roots of Cancer. Cancer Cell. 2016;29(6):783-803.
+    doi: 10.1016/j.ccell.2016.05.005
+  - name: Tight junction
+    source: kegg
+    kegg_id: hsa04530
+    citation: 'Kanehisa M, Goto S. KEGG: Kyoto Encyclopedia of Genes and Genomes. Nucleic Acids Res. 2000;28(1):27-30.'
+    doi: 10.1093/nar/28.1.27
+  - name: Epithelial-mesenchymal transition (EMT)
+    source: hallmark
+    hallmark_name: HALLMARK_EPITHELIAL_MESENCHYMAL_TRANSITION
+    citation: Liberzon A, Birger C, Thorvaldsdóttir H, Ghandi M, Mesirov JP, Tamayo P. The Molecular Signatures Database (MSigDB)
+      hallmark gene set collection. Cell Syst. 2015;1(6):417-425.
+    doi: 10.1016/j.cels.2015.12.004
+  - name: Wnt signaling
+    source: kegg
+    kegg_id: hsa04310
+    citation: 'Kanehisa M, Goto S. KEGG: Kyoto Encyclopedia of Genes and Genomes. Nucleic Acids Res. 2000;28(1):27-30.'
+    doi: 10.1093/nar/28.1.27
+  Broader oncogenic signaling pathways:
+  - name: NF-κB signaling
+    source: kegg
+    kegg_id: hsa04064
+    citation: Schubert M, Klinger B, Klünemann M, Sieber A, Uhlitz F, Sauer S, et al. Perturbation-response genes reveal signaling
+      footprints in cancer gene expression. Nat Commun. 2018;9:20.
+    doi: 10.1038/s41467-017-02391-6
+  - name: PI3K-Akt signaling
+    source: kegg
+    kegg_id: hsa04151
+    citation: Schubert M, Klinger B, Klünemann M, Sieber A, Uhlitz F, Sauer S, et al. Perturbation-response genes reveal signaling
+      footprints in cancer gene expression. Nat Commun. 2018;9:20.
+    doi: 10.1038/s41467-017-02391-6
+  - name: mTOR signaling
+    source: kegg
+    kegg_id: hsa04150
+    citation: 'Kanehisa M, Goto S. KEGG: Kyoto Encyclopedia of Genes and Genomes. Nucleic Acids Res. 2000;28(1):27-30.'
+    doi: 10.1093/nar/28.1.27
+  - name: TNF signaling
+    source: kegg
+    kegg_id: hsa04668
+    citation: Schubert M, Klinger B, Klünemann M, Sieber A, Uhlitz F, Sauer S, et al. Perturbation-response genes reveal signaling
+      footprints in cancer gene expression. Nat Commun. 2018;9:20.
+    doi: 10.1038/s41467-017-02391-6
+  - name: VEGF signaling
+    source: kegg
+    kegg_id: hsa04370
+    citation: Schubert M, Klinger B, Klünemann M, Sieber A, Uhlitz F, Sauer S, et al. Perturbation-response genes reveal signaling
+      footprints in cancer gene expression. Nat Commun. 2018;9:20.
+    doi: 10.1038/s41467-017-02391-6
+  - name: MAPK signaling
+    source: kegg
+    kegg_id: hsa04010
+    citation: 'Kanehisa M, Goto S. KEGG: Kyoto Encyclopedia of Genes and Genomes. Nucleic Acids Res. 2000;28(1):27-30.'
+    doi: 10.1093/nar/28.1.27
+  - name: p53 signaling
+    source: kegg
+    kegg_id: hsa04115
+    citation: 'Kanehisa M, Goto S. KEGG: Kyoto Encyclopedia of Genes and Genomes. Nucleic Acids Res. 2000;28(1):27-30.'
+    doi: 10.1093/nar/28.1.27
+  - name: Cell cycle
+    source: kegg
+    kegg_id: hsa04110
+    citation: 'Kanehisa M, Goto S. KEGG: Kyoto Encyclopedia of Genes and Genomes. Nucleic Acids Res. 2000;28(1):27-30.'
+    doi: 10.1093/nar/28.1.27
+  - name: Apoptosis
+    source: kegg
+    kegg_id: hsa04210
+    citation: 'Kanehisa M, Goto S. KEGG: Kyoto Encyclopedia of Genes and Genomes. Nucleic Acids Res. 2000;28(1):27-30.'
+    doi: 10.1093/nar/28.1.27
+  - name: Notch signaling
+    source: kegg
+    kegg_id: hsa04330
+    citation: 'Kanehisa M, Goto S. KEGG: Kyoto Encyclopedia of Genes and Genomes. Nucleic Acids Res. 2000;28(1):27-30.'
+    doi: 10.1093/nar/28.1.27
+  Broader immune pathway context:
+  - name: Tumor Inflammation Signature (TIS, 18-gene)
+    source: manual
+    genes:
+    - CCL5
+    - CD27
+    - CD274
+    - CD276
+    - CD8A
+    - CMKLR1
+    - CXCL9
+    - CXCR6
+    - HLA-DQA1
+    - HLA-DRB1
+    - HLA-E
+    - IDO1
+    - LAG3
+    - NKG7
+    - PDCD1LG2
+    - PSMB10
+    - STAT1
+    - TIGIT
+    citation: Ayers M, Lunceford J, Nebozhyn M, Murphy E, Loboda A, Kaufman DR, et al. IFN-γ-related mRNA profile predicts
+      clinical response to PD-1 blockade. J Clin Invest. 2017;127(8):2930-2940.
+    doi: 10.1172/JCI91190
+  - name: Cytolytic activity (CYT)
+    source: manual
+    genes:
+    - GZMA
+    - PRF1
+    citation: Rooney MS, Shukla SA, Wu CJ, Getz G, Hacohen N. Molecular and genetic properties of tumors associated with local
+      immune cytolytic activity. Cell. 2015;160(1-2):48-61.
+    doi: 10.1016/j.cell.2014.12.033
+  - name: Antigen presentation (MHC-I)
+    source: kegg
+    kegg_id: hsa04612
+    citation: 'Kanehisa M, Goto S. KEGG: Kyoto Encyclopedia of Genes and Genomes. Nucleic Acids Res. 2000;28(1):27-30.'
+    doi: 10.1093/nar/28.1.27
+  - name: NK cell-mediated cytotoxicity
+    source: kegg
+    kegg_id: hsa04650
+    citation: 'Kanehisa M, Goto S. KEGG: Kyoto Encyclopedia of Genes and Genomes. Nucleic Acids Res. 2000;28(1):27-30.'
+    doi: 10.1093/nar/28.1.27
+  - name: T cell receptor signaling
+    source: kegg
+    kegg_id: hsa04660
+    citation: 'Kanehisa M, Goto S. KEGG: Kyoto Encyclopedia of Genes and Genomes. Nucleic Acids Res. 2000;28(1):27-30.'
+    doi: 10.1093/nar/28.1.27
+  - name: TGF-β signaling / immune exclusion
+    source: manual
+    genes:
+    - TGFB1
+    - TGFBR2
+    - ACTA2
+    - COL1A1
+    - COL1A2
+    - PDGFRB
+    citation: Mariathasan S, Turley SJ, Nickles D, Castiglioni A, Yuen K, Wang Y, et al. TGFβ attenuates tumour response to
+      PD-L1 blockade by contributing to exclusion of T cells. Nature. 2018;554(7693):544-548.
+    doi: 10.1038/nature25501
+  - name: Complement and coagulation cascades
+    source: kegg
+    kegg_id: hsa04610
+    citation: 'Kanehisa M, Goto S. KEGG: Kyoto Encyclopedia of Genes and Genomes. Nucleic Acids Res. 2000;28(1):27-30.'
+    doi: 10.1093/nar/28.1.27
+  - name: Cytosolic DNA-sensing (cGAS-STING)
+    source: kegg
+    kegg_id: hsa04623
+    citation: Sun L, Wu J, Du F, Chen X, Chen ZJ. Cyclic GMP-AMP synthase is a cytosolic DNA sensor that activates the type
+      I interferon pathway. Science. 2013;339(6121):786-791.
+    doi: 10.1126/science.1232458
+  - name: Chemokine signaling
+    source: kegg
+    kegg_id: hsa04062
+    citation: 'Kanehisa M, Goto S. KEGG: Kyoto Encyclopedia of Genes and Genomes. Nucleic Acids Res. 2000;28(1):27-30.'
+    doi: 10.1093/nar/28.1.27
+  Metabolic pathway context:
+  - name: Hypoxia
+    source: hallmark
+    hallmark_name: HALLMARK_HYPOXIA
+    citation: Liberzon A, Birger C, Thorvaldsdóttir H, Ghandi M, Mesirov JP, Tamayo P. The Molecular Signatures Database (MSigDB)
+      hallmark gene set collection. Cell Syst. 2015;1(6):417-425.
+    doi: 10.1016/j.cels.2015.12.004
+  - name: Oxidative phosphorylation (OXPHOS)
+    source: kegg
+    kegg_id: hsa00190
+    citation: 'Kanehisa M, Goto S. KEGG: Kyoto Encyclopedia of Genes and Genomes. Nucleic Acids Res. 2000;28(1):27-30.'
+    doi: 10.1093/nar/28.1.27
+  - name: Glycolysis / gluconeogenesis
+    source: kegg
+    kegg_id: hsa00010
+    citation: 'Kanehisa M, Goto S. KEGG: Kyoto Encyclopedia of Genes and Genomes. Nucleic Acids Res. 2000;28(1):27-30.'
+    doi: 10.1093/nar/28.1.27
+  - name: Fatty acid metabolism
+    source: hallmark
+    hallmark_name: HALLMARK_FATTY_ACID_METABOLISM
+    citation: Liberzon A, Birger C, Thorvaldsdóttir H, Ghandi M, Mesirov JP, Tamayo P. The Molecular Signatures Database (MSigDB)
+      hallmark gene set collection. Cell Syst. 2015;1(6):417-425.
+    doi: 10.1016/j.cels.2015.12.004
+  - name: DNA repair
+    source: hallmark
+    hallmark_name: HALLMARK_DNA_REPAIR
+    citation: Liberzon A, Birger C, Thorvaldsdóttir H, Ghandi M, Mesirov JP, Tamayo P. The Molecular Signatures Database (MSigDB)
+      hallmark gene set collection. Cell Syst. 2015;1(6):417-425.
+    doi: 10.1016/j.cels.2015.12.004

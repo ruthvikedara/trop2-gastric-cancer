@@ -1,0 +1,38 @@
+# Define variables and comparisons for stratification analysis.
+# The pipeline will loop through each entry and run the specified comparisons.
+#
+# Supported variable types:
+#   gene_expression, Stratify patients by gene expression (high vs low)
+#   cell_type, Stratify patients by xCell cell type score (high vs low)
+#   gene_x_celltype, 4-way groups crossing gene expression and cell type score
+#   clinical, Categorical clinical variable with pairwise comparisons
+#
+# Usage:
+#   python scripts/run_analysis.py --cancer gastric --genes CDH6 --comparisons config/comparisons.yaml
+
+gastric:
+  # Standard gene expression dichotomization (existing behavior)
+  - variable: gene_expression
+    genes: [CDH6, CDH17, VEGFA, VEGFB, VEGFC]
+    method: median
+    description: "Gene expression high vs low"
+
+  # Cell type dichotomization
+  - variable: cell_type
+    cell_types: [CD8+ T-cells, CD4+ T-cells, Macrophages M1, Macrophages M2, B-cells]
+    method: median
+    description: "Cell type enrichment high vs low"
+
+  # 4-way: gene x cell type interaction
+  - variable: gene_x_celltype
+    genes: [CDH6]
+    cell_types: [CD8+ T-cells, Macrophages M1]
+    method: median
+    description: "Gene expression x cell type 4-way stratification"
+
+  # Categorical clinical variable (for future use with clinical data)
+  # - variable: clinical
+  #   column: ecog_score
+  #   reference: "0"
+  #   levels: ["0", "1", "2", "3", "4"]
+  #   description: "ECOG performance status pairwise vs 0"

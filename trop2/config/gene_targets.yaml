@@ -1,0 +1,73 @@
+# Gene Targets Configuration
+# Define genes of interest and analysis parameters
+
+# Default analysis parameters
+defaults:
+  stratification_method: median  # median | tertiles | quartiles
+  statistical_test: ttest        # ttest | wilcoxon | both
+  alpha: 0.05
+  multiple_testing_correction: fdr_bh  # fdr_bh | bonferroni | none
+
+# Gene targets by category
+targets:
+  # Therapeutic targets
+  therapeutic:
+    TACSTD2:
+      aliases: [TROP2, M1S1, GA733-1]
+      description: "Trophoblast cell-surface antigen 2"
+      rationale: "Target of sacituzumab govitecan (ADC)"
+      
+    FGFR2:
+      aliases: [BEK, KGFR]
+      description: "Fibroblast growth factor receptor 2"
+      rationale: "Target of pemigatinib, FGFR2 amplification in GC"
+      
+    ERBB2:
+      aliases: [HER2, NEU]
+      description: "Erb-b2 receptor tyrosine kinase 2"
+      rationale: "Target of trastuzumab"
+      
+    CLDN18:
+      aliases: [CLAUDIN18]
+      description: "Claudin 18"
+      rationale: "Target of zolbetuximab (CLDN18.2)"
+      
+    EGFR:
+      aliases: [ERBB1, HER1]
+      description: "Epidermal growth factor receptor"
+      rationale: "Pan-cancer therapeutic target"
+
+  # Immune checkpoint genes
+  immune_checkpoint:
+    CD274:
+      aliases: [PD-L1, PDCD1LG1]
+      description: "Programmed death-ligand 1"
+      rationale: "Immune checkpoint, pembrolizumab target"
+      
+    PDCD1:
+      aliases: [PD-1]
+      description: "Programmed cell death 1"
+      rationale: "Immune checkpoint receptor"
+      
+    CTLA4:
+      aliases: [CD152]
+      description: "Cytotoxic T-lymphocyte associated protein 4"
+      rationale: "Immune checkpoint, ipilimumab target"
+
+  # TME markers
+  tme_markers:
+    CD8A:
+      aliases: []
+      description: "CD8a molecule"
+      rationale: "Cytotoxic T cell marker"
+      
+    FOXP3:
+      aliases: []
+      description: "Forkhead box P3"
+      rationale: "Regulatory T cell marker"
+
+# Quick access lists for batch analysis
+analysis_sets:
+  primary_targets: [TACSTD2, FGFR2, ERBB2]
+  immune_panel: [CD274, PDCD1, CTLA4, CD8A, FOXP3]
+  full_panel: [TACSTD2, FGFR2, ERBB2, CLDN18, EGFR, CD274, PDCD1, CTLA4]

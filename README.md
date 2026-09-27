@@ -1,0 +1,1 @@
+This GitHub repository includes the code used in the study: Spatial immune profiling of Trop2-expressing gastric cancer identifies an immune-excluded phenotype with attenuated checkpoint inhibitor benefit.
